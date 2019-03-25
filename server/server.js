@@ -1,0 +1,64 @@
+const express = require('express');
+const bodyParser = require('body-parser'); //bring json from http request
+const cookieParser = require('cookie-parser');
+const mongoose = require('mongoose');
+require('dotenv').config(); //handle the .env import
+
+
+
+const app = express();
+mongoose.Promise = global.Promise;
+mongoose.connect(process.env.DATABASE, { useNewUrlParser: true });
+mongoose.set('useCreateIndex', true); //get rid of warning
+
+//register middlaware
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
+// app.use(cookieParser());
+//
+//================ Models ==============
+
+const User=require('./models/user');
+
+//================ Users ================
+
+app.get('/', (req, res)=>{
+    res.send('<html><head></head><body><h1>Hello world</h1></body></html>')
+});
+
+app.post('/api/users/register', (req, res)=>{
+    //create a new user schema
+    const user = new User(req.body);
+    //take the data form the body of the post request and store it in database
+    user.save((err, doc)=>{
+        if(err) return res.json({success:false, err});
+        res.status(200).json({success: true, userdata: doc});
+    });
+
+});
+
+app.post('/api/users/login', (req, res)=>{
+    //find email
+User.findOne({'email':req.body.email}, (err, user)=>{
+    if(!user)return res.json({loginSuccess: false, message:"Auth failed - email not found"});
+    //if the email is in the database check the password
+user.comparePassword(req.body.password, (err, isMatch)=>{
+    if(!isMatch) return res.json({loginSuccess: false, message: "Wrong password."});
+    //if password is correct, generate a token
+    user.generateToken((err, user)=>{
+        if(err) return res.status(400).send(err);
+        //if there is no error, store the token as a cookie
+        res.cookie('w_auth',user.token).status(200).json({loginSuccess:true});
+    });
+
+
+})
+});
+
+
+
+});
+
+const port = process.env.PORT || 3002;
+
+app.listen(port, console.log("Server running on port " + port));
