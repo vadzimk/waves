@@ -20,11 +20,25 @@ const auth = require('./middleware/auth');
 //================ Models ==============
 
 const User = require('./models/user');
+const Brand = require('./models/brand');
+
+//================ Brand ===============
+
+app.post('/api/product/brand', auth, (req, res) => {
+    const brand = new Brand(req.body);
+    //by default the save method returns back what was saved to the db
+    brand.save((err, doc) => {
+        if (err) return res.json({success: false, err});
+        res.status(200).json({success: true, brand: doc});
+    });
+
+
+});
 
 //================ Users ================
 
 app.get('/', (req, res) => {
-    res.send('<html><head></head><body><h1>Hello world</h1></body></html>')
+    res.send('<html><head></head><body><h1>Hello world</h1></body></html>');
 });
 
 app.get('/api/users/auth', auth, (req, res) => {
@@ -67,10 +81,10 @@ app.post('/api/users/login', (req, res) => {
     });
 });
 
-app.get('/api/user/logout', auth, (req, res)=>{
-    User.findOneAndUpdate({_id:req.user._id},{token:''},(err,doc)=>{
-        if(err) return res.json({success: false, err});
-        return res.status(200).send({success:true});
+app.get('/api/user/logout', auth, (req, res) => {
+    User.findOneAndUpdate({_id: req.user._id}, {token: ''}, (err, doc) => {
+        if (err) return res.json({success: false, err});
+        return res.status(200).send({success: true});
     });
 });
 
