@@ -64,21 +64,34 @@ userSchema.pre('save', function (next) {
 
 
 //method to compare password on the userSchema
-userSchema.methods.comparePassword = (candidatePassword, cb) => {
+userSchema.methods.comparePassword = function (candidatePassword, cb) {
     bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
         if (err) return cb(err);
         cb(null, isMatch);
-    })
+    });
 };
+
 
 //method to generate token
 userSchema.methods.generateToken = function (cb) {
     const user = this;
-    const token = jwt.sign(user._id.teHexString(), process.env.SECRET);
+    const token = jwt.sign(user._id.toHexString(), process.env.SECRET);
     user.token = token;
-    user.save((err, user)=>{
-        if(err) return cb(err);
+    user.save((err, user) => {
+        if (err) return cb(err);
         cb(null, user);
+    });
+};
+
+userSchema.statics.findByToken = function (token, cb) {
+    const user = this;
+    //decode the token with jwt get id of the user
+    //decode arg is the return value that is the user id
+    jwt.verify(token, process.env.SECRET, function (err, decode) {
+        user.findOne({'_id': decode, token}, function (err, user) {
+            if (err) return cb(err);
+            cb(null, user);
+        });
     });
 };
 

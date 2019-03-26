@@ -14,7 +14,9 @@ mongoose.set('useCreateIndex', true); //get rid of warning
 //register middlaware
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
-// app.use(cookieParser());
+app.use(cookieParser());
+const auth = require('./middleware/auth');
+
 //
 //================ Models ==============
 
@@ -26,13 +28,26 @@ app.get('/', (req, res)=>{
     res.send('<html><head></head><body><h1>Hello world</h1></body></html>')
 });
 
+app.get('/api/users/auth', auth, (req, res)=>{
+    res.status(200).json({
+        isAdmin: req.user.role === 0 ? false : true,
+        isAuth: true,
+        email: req.user.email,
+        name: req.user.name,
+        lastname: req.user.lastname,
+        role: req.user.role,
+        cart: req.user.cart,
+        history: req.user.history,
+    });
+});
+
 app.post('/api/users/register', (req, res)=>{
     //create a new user schema
     const user = new User(req.body);
     //take the data form the body of the post request and store it in database
     user.save((err, doc)=>{
         if(err) return res.json({success:false, err});
-        res.status(200).json({success: true, userdata: doc});
+        res.status(200).json({success: true});
     });
 
 });
