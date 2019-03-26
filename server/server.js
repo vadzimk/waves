@@ -23,6 +23,21 @@ const admin = require('./middleware/admin');
 const User = require('./models/user');
 const Brand = require('./models/brand');
 const Attribute_name = require('./models/attribute_name');
+const Product = require('./models/product');
+
+//================= Product =================
+
+//create a new article
+app.post('/api/product/article', auth, admin, (req, res) => {
+    const product = new Product(req.body);
+
+    product.save((err, doc) => {
+        if (err) return res.json({success: false, err});
+        res.status(200).json({success: true, article: doc})
+    });
+    
+});
+
 
 //================ Attribute_name ===========
 
@@ -39,9 +54,9 @@ app.post('/api/product/attribute_name', auth, admin, (req, res) => {
 });
 
 //get all sorts of the attribute_name
-app.get('/api/product/attribute_names', (req,res)=>{
-    Attribute_name.find({}, (err, attribute_names)=>{
-        if(err) return res.status(400).send(err);
+app.get('/api/product/attribute_names', (req, res) => {
+    Attribute_name.find({}, (err, attribute_names) => {
+        if (err) return res.status(400).send(err);
         res.status(200).send(attribute_names);
     });
 });

@@ -54,6 +54,6 @@ const productSchema = mongoose.Schema({
         default: [],
     }
 
-},{timestamps: true}); //generate timestamps for the products automatically by mongo db
+},{timestamps: true}); //generate timestamps for the products automatically by Mongo db
 
 module.exports = mongoose.model('Product', productSchema);
