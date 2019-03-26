@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cookieParser());
 const auth = require('./middleware/auth');
+const admin = require('./middleware/admin');
 
 //
 //================ Models ==============
@@ -24,7 +25,7 @@ const Brand = require('./models/brand');
 
 //================ Brand ===============
 
-app.post('/api/product/brand', auth, (req, res) => {
+app.post('/api/product/brand', auth, admin, (req, res) => {
     const brand = new Brand(req.body);
     //by default the save method returns back what was saved to the db
     brand.save((err, doc) => {
