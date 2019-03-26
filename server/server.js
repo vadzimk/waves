@@ -25,6 +25,7 @@ const Brand = require('./models/brand');
 
 //================ Brand ===============
 
+//create a new brand
 app.post('/api/product/brand', auth, admin, (req, res) => {
     const brand = new Brand(req.body);
     //by default the save method returns back what was saved to the db
@@ -34,6 +35,14 @@ app.post('/api/product/brand', auth, admin, (req, res) => {
     });
 
 
+});
+
+//get all brands from administrator's panel
+app.get('/api/product/brands', (req,res)=>{
+    Brand.find({}, (err, brands)=>{
+        if(err) return res.status(400).send(err);
+        res.status(200).send(brands);
+    });
 });
 
 //================ Users ================
