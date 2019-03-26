@@ -22,6 +22,30 @@ const admin = require('./middleware/admin');
 
 const User = require('./models/user');
 const Brand = require('./models/brand');
+const Attribute_name = require('./models/attribute_name');
+
+//================ Attribute_name ===========
+
+//create a new sort in the attribute_name
+app.post('/api/product/attribute_name', auth, admin, (req, res) => {
+    const attribute_name = new Attribute_name(req.body);
+    attribute_name.save((err, doc) => {
+        if (err) return res.json({success: false, err});
+        res.status(200).json({
+            success: true,
+            attribute_name: doc,
+        });
+    });
+});
+
+//get all sorts of the attribute_name
+app.get('/api/product/attribute_names', (req,res)=>{
+    Attribute_name.find({}, (err, attribute_names)=>{
+        if(err) return res.status(400).send(err);
+        res.status(200).send(attribute_names);
+    });
+});
+
 
 //================ Brand ===============
 
@@ -38,9 +62,9 @@ app.post('/api/product/brand', auth, admin, (req, res) => {
 });
 
 //get all brands from administrator's panel
-app.get('/api/product/brands', (req,res)=>{
-    Brand.find({}, (err, brands)=>{
-        if(err) return res.status(400).send(err);
+app.get('/api/product/brands', (req, res) => {
+    Brand.find({}, (err, brands) => {
+        if (err) return res.status(400).send(err);
         res.status(200).send(brands);
     });
 });
