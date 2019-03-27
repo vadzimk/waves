@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f274d5d7-7083-49d5-af93-7432e7f6716b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,17 +26,25 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="README" value="2" />
+          <entry key="css" value="2" />
           <entry key="env" value="1" />
-          <entry key="gitignore" value="1" />
-          <entry key="js" value="7" />
-          <entry key="json" value="7" />
+          <entry key="gitignore" value="2" />
+          <entry key="html" value="1" />
+          <entry key="js" value="11" />
+          <entry key="json" value="9" />
+          <entry key="svg" value="1" />
+          <entry key="ts" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JSON" value="7" />
-          <entry key="JavaScript" value="7" />
-          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="CSS" value="2" />
+          <entry key="HTML" value="1" />
+          <entry key="JSON" value="9" />
+          <entry key="JavaScript" value="11" />
+          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="SVG" value="1" />
+          <entry key="TypeScript" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -42,26 +52,111 @@
           <entry key="README" value="24" />
           <entry key="env" value="87" />
           <entry key="gitignore" value="80" />
-          <entry key="js" value="9417" />
-          <entry key="json" value="96" />
+          <entry key="html" value="2" />
+          <entry key="js" value="9553" />
+          <entry key="json" value="251" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JSON" value="96" />
-          <entry key="JavaScript" value="9417" />
+          <entry key="HTML" value="2" />
+          <entry key="JSON" value="251" />
+          <entry key="JavaScript" value="9553" />
           <entry key="PLAIN_TEXT" value="191" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts">
+        <counts>
+          <entry key="TypeScriptServerServiceImpl" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="47" column="3" lean-forward="true" selection-start-line="47" selection-start-column="3" selection-end-line="47" selection-end-column="3" />
+            <state relative-caret-position="494">
+              <caret line="47" column="3" selection-start-line="47" selection-start-column="3" selection-end-line="47" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/public/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="8" column="69" selection-start-line="8" selection-start-column="69" selection-end-line="8" selection-end-column="69" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="10" column="63" lean-forward="true" selection-start-line="10" selection-start-column="63" selection-end-line="10" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/setupProxy.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/node_modules/@types/react/index.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="421" column="8" selection-start-line="421" selection-start-column="8" selection-end-line="421" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -75,78 +170,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/models/brand.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package-lock.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-36978">
-              <caret column="1" selection-start-column="1" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jsons/products.README">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3767">
-              <caret line="21" column="161" selection-start-line="21" selection-start-column="161" selection-end-line="21" selection-end-column="161" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/middleware/auth.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/models/user.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="85" column="30" selection-start-line="85" selection-start-column="19" selection-end-line="85" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/models/attribute_name.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="11" column="72" lean-forward="true" selection-start-line="11" selection-start-column="72" selection-end-line="11" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="6" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -156,7 +179,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/server.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/package-lock.json" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/server/models/user.js" />
@@ -169,6 +191,12 @@
         <option value="$PROJECT_DIR$/server/models/attribute_name.js" />
         <option value="$PROJECT_DIR$/server/models/product.js" />
         <option value="$PROJECT_DIR$/server/server.js" />
+        <option value="$PROJECT_DIR$/client/public/index.html" />
+        <option value="$PROJECT_DIR$/client/src/index.js" />
+        <option value="$PROJECT_DIR$/client/src/App.js" />
+        <option value="$PROJECT_DIR$/client/package.json" />
+        <option value="$PROJECT_DIR$/client/src/setupProxy.js" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -179,10 +207,12 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/client/node_modules" />
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
+      <path value="$PROJECT_DIR$/client/package.json" />
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
@@ -205,28 +235,6 @@
             <path>
               <item name="waves" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="waves" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="jsons" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="waves" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="waves" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="middleware" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="waves" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="server" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="models" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -257,6 +265,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2018.2.5\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -286,20 +295,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1553395813004</updated>
-      <workItem from="1553395814546" duration="57262000" />
+      <workItem from="1553395814546" duration="60410000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57262000" />
+    <option name="totallyTimeSpent" value="60410000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="762" y="30" width="781" height="840" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11734029" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24119948" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="TypeScript" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" />
@@ -364,13 +373,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="6" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/middleware/auth.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -385,13 +387,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jsons/products.README">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3767">
@@ -402,7 +397,7 @@
     <entry file="file://$PROJECT_DIR$/server/models/attribute_name.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
-          <caret line="11" column="72" lean-forward="true" selection-start-line="11" selection-start-column="72" selection-end-line="11" selection-end-column="72" />
+          <caret line="11" column="72" selection-start-line="11" selection-start-column="72" selection-end-line="11" selection-end-column="72" />
         </state>
       </provider>
     </entry>
@@ -422,8 +417,88 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="47" column="3" lean-forward="true" selection-start-line="47" selection-start-column="3" selection-end-line="47" selection-end-column="3" />
+        <state relative-caret-position="494">
+          <caret line="47" column="3" selection-start-line="47" selection-start-column="3" selection-end-line="47" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/App.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/App.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/index.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/logo.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/node_modules/@types/react/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="421" column="8" selection-start-line="421" selection-start-column="8" selection-end-line="421" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="8" column="69" selection-start-line="8" selection-start-column="69" selection-end-line="8" selection-end-column="69" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/setupProxy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="10" column="63" lean-forward="true" selection-start-line="10" selection-start-column="63" selection-end-line="10" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
         </state>
       </provider>
     </entry>
