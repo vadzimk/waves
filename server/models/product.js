@@ -33,7 +33,7 @@ const productSchema = mongoose.Schema({
     },
     attribute_name:{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "attribute_name",
+        ref: "Attribute_name",
         required: true,
     },
     attribute2:{

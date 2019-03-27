@@ -27,6 +27,24 @@ const Product = require('./models/product');
 
 //================= Product =================
 
+//fetch article/s by id in a query string
+app.get('/api/product/articles_by_id', (req,res)=>{
+    const type = req.query.type; //is single or array
+    let items = req.query.id;
+    if(type==='array'){
+        let ids = req.query.id.split(',');
+//array of objectIds:
+        items = ids.map(item=>
+            mongoose.Types.ObjectId(item)
+        );
+    }
+    Product
+        .find({'_id':{$in:items}})
+        .populate('brand')
+        .populate('attribute_name')
+        .exec((err, docs)=>res.status(200).send(docs));
+});
+
 //create a new article
 app.post('/api/product/article', auth, admin, (req, res) => {
     const product = new Product(req.body);
@@ -35,7 +53,7 @@ app.post('/api/product/article', auth, admin, (req, res) => {
         if (err) return res.json({success: false, err});
         res.status(200).json({success: true, article: doc})
     });
-    
+
 });
 
 
