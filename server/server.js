@@ -26,8 +26,32 @@ const Attribute_name = require('./models/attribute_name');
 const Product = require('./models/product');
 
 //================= Product =================
+//query articles by createdAt:
+//articles?sortBy=createdAt&order=desc&limit=100&skip=5
+//query articles by sold:
+//articles?sortBy=sold&order=desc&limit=4
+app.get('/api/products/articles',(req,res)=>{
+    let order = req.query.order ? req.query.order : 'asc';
+    let sortBy = req.query.sortBy ? req.query.sortBy : '_id';
+    let limit = req.query.limit ? parseInt(req.query.limit) : 100;
 
-//fetch article/s by id in a query string
+    Product
+        .find()
+        .populate('brand')
+        .populate('attribute_name')
+        .sort([[sortBy, order]])
+        .limit(limit)
+        .exec((err, articles)=>{
+            if(err) return res.status(400).send(err);
+            res.send(articles);
+        });
+});
+
+
+
+
+//query article/s by id
+//article?id=XXX,XXX,XXX&type=single
 app.get('/api/product/articles_by_id', (req,res)=>{
     const type = req.query.type; //is single or array
     let items = req.query.id;
