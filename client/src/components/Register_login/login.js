@@ -1,6 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import FormField from '../utils/Form/formField';
+import {update, generateData, isFormValid} from "../utils/Form/formActions";
+import {withRouter} from 'react-router-dom';
+
+import {loginUser} from "../../actions/user_actions";
 
 class Login extends React.Component {
     state = {
@@ -42,11 +46,37 @@ class Login extends React.Component {
         }
     };
 
-    updateForm=()=>{
-
+    updateForm = (element) => {
+        const newFormdata = update(element, this.state.formdata, 'login');
+        this.setState({
+            formError: false,
+            formdata: newFormdata,
+        });
     };
 
-    submitForm = () => {
+    submitForm = (event) => {
+        event.preventDefault();
+        let dataToSubmit = generateData(this.state.formdata, 'login');
+
+        const formIsValid = isFormValid(this.state.formdata, 'login');
+        if (formIsValid) {
+            this.props.dispatch(loginUser(dataToSubmit)).then(response=>{
+                if(response.payload.loginSuccess){
+                    console.log(response.payload);
+                    this.props.history.push('/user/dashboard')
+                }else{
+                    this.setState({
+                        formError: true,
+                    });
+                }
+            });
+        } else {
+            this.setState({
+                formErr: true,
+            })
+        }
+
+
     };
 
     render() {
@@ -56,8 +86,25 @@ class Login extends React.Component {
                     <FormField
                         id={'email'}
                         formdata={this.state.formdata.email}
-                        change={(element)=>this.updateForm(element)}
+                        change={(element) => this.updateForm(element)}
                     />
+
+                    <FormField
+                        id={'password'}
+                        formdata={this.state.formdata.password}
+                        change={(element) => this.updateForm(element)}
+                    />
+
+                    {/*submit the form*/}
+                    {this.state.formError ?
+                        <div className="error_label">
+                            Please check your input
+                        </div>
+                        : null}
+                    <button onClick={
+                        (event) => this.submitForm(event)}>
+                        Login
+                    </button>
                 </form>
 
             </div>
@@ -65,4 +112,4 @@ class Login extends React.Component {
     }
 }
 
-export default connect()(Login);
+export default connect()(withRouter(Login));
