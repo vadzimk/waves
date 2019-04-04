@@ -4,3 +4,4 @@
 variables.env
 npm-debug.log*
 /jsons
+/.idea
