@@ -1,8 +1,9 @@
-// button will receive props
+// MyButton will receive props
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const Button = (props) => {
+
+const MyButton = (props) => {
 
     const buttons = () => {
         let template = '';
@@ -30,4 +31,4 @@ const Button = (props) => {
     );
 };
 
-export default Button;
+export default MyButton;

@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f274d5d7-7083-49d5-af93-7432e7f6716b" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/user_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/user_actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Register_login/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Register_login/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/utils/Form/formActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/utils/Form/formActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/reducers/user_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/user_reducer.js" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,8 +41,9 @@
           <entry key="env" value="1" />
           <entry key="gitignore" value="4" />
           <entry key="html" value="1" />
-          <entry key="js" value="44" />
-          <entry key="json" value="11" />
+          <entry key="js" value="47" />
+          <entry key="json" value="13" />
+          <entry key="md" value="1" />
           <entry key="svg" value="1" />
           <entry key="ts" value="1" />
         </counts>
@@ -42,9 +52,15 @@
         <counts>
           <entry key="CSS" value="4" />
           <entry key="HTML" value="1" />
+<<<<<<< Updated upstream
           <entry key="JSON" value="11" />
           <entry key="JavaScript" value="44" />
           <entry key="PLAIN_TEXT" value="7" />
+=======
+          <entry key="JSON" value="13" />
+          <entry key="JavaScript" value="47" />
+          <entry key="PLAIN_TEXT" value="6" />
+>>>>>>> Stashed changes
           <entry key="SVG" value="1" />
           <entry key="TypeScript" value="1" />
         </counts>
@@ -55,7 +71,7 @@
           <entry key="env" value="87" />
           <entry key="gitignore" value="87" />
           <entry key="html" value="2" />
-          <entry key="js" value="18603" />
+          <entry key="js" value="19739" />
           <entry key="json" value="251" />
         </counts>
       </usages-collector>
@@ -63,8 +79,13 @@
         <counts>
           <entry key="HTML" value="2" />
           <entry key="JSON" value="251" />
+<<<<<<< Updated upstream
           <entry key="JavaScript" value="18603" />
           <entry key="PLAIN_TEXT" value="198" />
+=======
+          <entry key="JavaScript" value="19739" />
+          <entry key="PLAIN_TEXT" value="191" />
+>>>>>>> Stashed changes
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -79,17 +100,30 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/reducers/user_reducer.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="95">
               <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+=======
+            <state relative-caret-position="133">
+              <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/Register_login/register.js">
+<<<<<<< Updated upstream
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="95">
               <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+=======
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="8" column="32" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="32" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -98,6 +132,17 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+>>>>>>> Stashed changes
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
         <entry file="file://$PROJECT_DIR$/client/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="171">
@@ -111,6 +156,19 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="114">
               <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+=======
+        <entry file="file://$PROJECT_DIR$/client/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-19" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/package-lock.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-8664">
+              <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -118,8 +176,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/actions/user_actions.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="76">
               <caret line="4" selection-start-line="4" selection-end-line="4" />
+=======
+            <state relative-caret-position="209">
+              <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+>>>>>>> Stashed changes
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -127,21 +190,32 @@
           </provider>
         </entry>
       </file>
+<<<<<<< Updated upstream
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/actions/types.js">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="39" lean-forward="true" selection-start-column="39" selection-end-column="39" />
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/actions/types.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< Updated upstream
         <entry file="file://$PROJECT_DIR$/client/.gitignore">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+=======
+>>>>>>> Stashed changes
         <entry file="file://$PROJECT_DIR$/client/src/components/utils/Form/formField.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="95">
@@ -165,13 +239,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/utils/Form/formActions.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="171">
               <caret line="37" column="18" lean-forward="true" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
+=======
+            <state relative-caret-position="342">
+              <caret line="44" column="18" lean-forward="true" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>formErr</find>
+      <find>waves</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -206,13 +291,13 @@
         <option value="$PROJECT_DIR$/client/src/index.js" />
         <option value="$PROJECT_DIR$/client/src/components/utils/button.js" />
         <option value="$PROJECT_DIR$/client/src/components/utils/Form/formField.js" />
-        <option value="$PROJECT_DIR$/client/src/components/utils/Form/formActions.js" />
-        <option value="$PROJECT_DIR$/client/src/actions/types.js" />
-        <option value="$PROJECT_DIR$/client/src/reducers/user_reducer.js" />
-        <option value="$PROJECT_DIR$/client/src/actions/user_actions.js" />
         <option value="$PROJECT_DIR$/client/src/components/Register_login/index.js" />
         <option value="$PROJECT_DIR$/client/src/routes.js" />
         <option value="$PROJECT_DIR$/client/src/components/Register_login/login.js" />
+        <option value="$PROJECT_DIR$/client/src/components/utils/Form/formActions.js" />
+        <option value="$PROJECT_DIR$/client/src/actions/user_actions.js" />
+        <option value="$PROJECT_DIR$/client/src/reducers/user_reducer.js" />
+        <option value="$PROJECT_DIR$/client/src/actions/types.js" />
         <option value="$PROJECT_DIR$/client/src/components/Register_login/register.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
       </list>
@@ -234,7 +319,11 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
+<<<<<<< Updated upstream
   <component name="ProjectFrameBounds" extendedState="7">
+=======
+  <component name="ProjectFrameBounds" extendedState="6">
+>>>>>>> Stashed changes
     <option name="x" value="982" />
     <option name="y" value="66" />
     <option name="width" value="980" />
@@ -388,18 +477,25 @@
       <workItem from="1553395814546" duration="60615000" />
       <workItem from="1553798895023" duration="19018000" />
       <workItem from="1553985844840" duration="17393000" />
-      <workItem from="1554235424100" duration="9487000" />
+      <workItem from="1554235424100" duration="15802000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="107100000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="23" width="1550" height="848" extended-state="7" />
+=======
+    <option name="totallyTimeSpent" value="112828000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="23" width="1550" height="848" extended-state="6" />
+>>>>>>> Stashed changes
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.26493508" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13216145" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -557,6 +653,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/client/src/components/utils/Form/formActions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -564,6 +661,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> Stashed changes
     <entry file="file://$PROJECT_DIR$/client/src/resources/styles.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -584,6 +683,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/client/src/actions/types.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -591,6 +691,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> Stashed changes
     <entry file="file://$PROJECT_DIR$/client/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
@@ -608,6 +710,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/client/src/actions/user_actions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -618,6 +721,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> Stashed changes
     <entry file="file://$PROJECT_DIR$/client/src/hoc/Layout.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -638,6 +743,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/client/src/reducers/user_reducer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -645,6 +751,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> Stashed changes
     <entry file="file://$PROJECT_DIR$/client/src/serviceWorker.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -671,13 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/utils/Form/formField.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Register_login/login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="421">
@@ -688,16 +789,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Register_login/register.js">
+    <entry file="file://$PROJECT_DIR$/client/src/components/utils/Form/formField.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/actions/user_actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/user_reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/utils/Form/formActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="44" column="18" lean-forward="true" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-19" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8664">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Register_login/register.js">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
+        <state relative-caret-position="95">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+=======
+        <state relative-caret-position="152">
+          <caret line="8" column="32" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="32" />
+>>>>>>> Stashed changes
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< Updated upstream
     <entry file="file://$PROJECT_DIR$/client/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-19" />
@@ -724,6 +881,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+=======
+    <entry file="file://$PROJECT_DIR$/client/src/actions/types.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>

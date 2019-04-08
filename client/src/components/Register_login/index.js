@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../utils/button';
+import MyButton from '../utils/button';
 import Login from './login';
 
 const RegisterLogin = () => {
@@ -12,7 +12,7 @@ const RegisterLogin = () => {
                         <p>Accentors velum in tolosa!A falsis, hilotae talis repressor.Sunt fiscinaes promissio
                             rusticus, gratis calceuses.Cur amicitia mori?A falsis, deus albus humani generis.</p>
 
-                        <Button
+                        <MyButton
                             type="default"
                             title="Create an account"
                             linkTo="/register"
