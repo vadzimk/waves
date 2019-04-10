@@ -96,5 +96,5 @@ userSchema.statics.findByToken = function (token, cb) {
 };
 
 
-module.exports = mongoose.model('User', userSchema); //User model created out of the userSchema (the name is passed as a string argument inside the model method)
+module.exports = mongoose.model('User', userSchema); //UserDashboard model created out of the userSchema (the name is passed as a string argument inside the model method)
 
