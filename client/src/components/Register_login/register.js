@@ -6,12 +6,12 @@ import {connect} from 'react-redux';
 import {registerUser} from "../../actions/user_actions";
 
 //dialog
-//import Dialog from '@material-ui/core/Dialog';
+import Dialog from '@material-ui/core/Dialog';
 
 class Register extends React.Component {
     state = {
         formErr: false,
-        formSuccess: '',
+        formSuccess: false,
         formdata: {
             name: {
                 element: 'input',
@@ -205,14 +205,14 @@ class Register extends React.Component {
                     </div>
                 </div>
 
-                {/*<Dialog open={this.state.formSuccess}>*/}
-                    {/*<div className="dialog_alert">*/}
-                        {/*<div>*/}
-                            {/*Thank you for registering.*/}
-                            {/*Redirecting you to the LOGIN in a second*/}
-                        {/*</div>*/}
-                    {/*</div>*/}
-                {/*</Dialog>*/}
+                <Dialog open={this.state.formSuccess}>
+                    <div className="dialog_alert">
+                        <div>
+                            Thank you for registering.
+                            Redirecting you to the LOGIN in a second
+                        </div>
+                    </div>
+                </Dialog>
             </div>
         );
     }
