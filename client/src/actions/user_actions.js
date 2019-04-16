@@ -20,3 +20,12 @@ export const loginUser = (dataToSubmit) => {
         payload: request,
     };
 };
+
+export const authenticateUser=()=>{
+    const request = axios.get(USER_SERVER + '/auth')
+        .then(res=>res.data);
+    return {
+        type: T.AUTH_USER,
+        payload: request,
+    };
+};
