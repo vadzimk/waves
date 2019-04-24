@@ -16,6 +16,8 @@ switch (action.type) {
         return {
             ...state,
             userData: action.payload};
+    case T.LOGOUT_USER:
+        return state;
     default:
         return state;
 }
