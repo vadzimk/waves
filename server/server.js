@@ -52,7 +52,7 @@ app.get('/api/products/articles',(req,res)=>{
 
 //query article/s by id
 //article?id=XXX,XXX,XXX&type=single
-app.get('/api/product/articles_by_id', (req,res)=>{
+app.get('/api/products/articles_by_id', (req,res)=>{
     const type = req.query.type; //is single or array
     let items = req.query.id;
     if(type==='array'){
@@ -70,7 +70,7 @@ app.get('/api/product/articles_by_id', (req,res)=>{
 });
 
 //create a new article
-app.post('/api/product/article', auth, admin, (req, res) => {
+app.post('/api/products/article', auth, admin, (req, res) => {
     const product = new Product(req.body);
 
     product.save((err, doc) => {
@@ -84,7 +84,7 @@ app.post('/api/product/article', auth, admin, (req, res) => {
 //================ Attribute_name ===========
 
 //create a new sort in the attribute_name
-app.post('/api/product/attribute_name', auth, admin, (req, res) => {
+app.post('/api/products/attribute_name', auth, admin, (req, res) => {
     const attribute_name = new Attribute_name(req.body);
     attribute_name.save((err, doc) => {
         if (err) return res.json({success: false, err});
@@ -96,7 +96,7 @@ app.post('/api/product/attribute_name', auth, admin, (req, res) => {
 });
 
 //get all sorts of the attribute_name
-app.get('/api/product/attribute_names', (req, res) => {
+app.get('/api/products/attribute_names', (req, res) => {
     Attribute_name.find({}, (err, attribute_names) => {
         if (err) return res.status(400).send(err);
         res.status(200).send(attribute_names);
@@ -107,7 +107,7 @@ app.get('/api/product/attribute_names', (req, res) => {
 //================ Brand ===============
 
 //create a new brand
-app.post('/api/product/brand', auth, admin, (req, res) => {
+app.post('/api/products/brand', auth, admin, (req, res) => {
     const brand = new Brand(req.body);
     //by default the save method returns back what was saved to the db
     brand.save((err, doc) => {
@@ -119,7 +119,7 @@ app.post('/api/product/brand', auth, admin, (req, res) => {
 });
 
 //get all brands from administrator's panel
-app.get('/api/product/brands', (req, res) => {
+app.get('/api/products/brands', (req, res) => {
     Brand.find({}, (err, brands) => {
         if (err) return res.status(400).send(err);
         res.status(200).send(brands);
