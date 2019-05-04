@@ -20,6 +20,26 @@ export const getProductsByArrival = () => {
         type: T.GET_PRODUCTS_BY_ARRIVAL,
         payload: request,
     };
+};
 
+///////////////////////////////
+// Categories //
+///////////////////////////////
 
+export const getBrands =()=>{
+    const request = axios.get(PRODUCT_SERVER + '/brands')
+        .then(res=>res.data);
+    return {
+        type: T.GET_BRANDS,
+        payload: request,
+    }
+};
+
+export const getAttribute_name =()=>{
+    const request = axios.get(PRODUCT_SERVER + '/attribute_name')
+        .then(res=>res.data);
+    return {
+        type: T.GET_ATTRIBUTE_NAME,
+        payload: request,
+    }
 };

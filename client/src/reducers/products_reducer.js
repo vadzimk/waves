@@ -12,6 +12,16 @@ export default (state = {}, action) => {
                 ...state,
                 byArrival: action.payload
             };
+        case T.GET_BRANDS:
+            return {
+                ...state,
+                brands: action.payload
+            };
+        case T.GET_ATTRIBUTE_NAME:
+            return {
+                ...state,
+                attribute_name: action.payload
+            };
         default:
             return state;
     }
