@@ -35,11 +35,20 @@ export const getBrands =()=>{
     }
 };
 
-export const getAttribute_name =()=>{
-    const request = axios.get(PRODUCT_SERVER + '/attribute_name')
+export const getAttribute1 =()=>{
+    const request = axios.get(PRODUCT_SERVER + '/attribute1')
         .then(res=>res.data);
     return {
-        type: T.GET_ATTRIBUTE_NAME,
+        type: T.GET_ATTRIBUTE1,
+        payload: request,
+    }
+};
+
+export const getAttribute2 =()=>{
+    const request = axios.get(PRODUCT_SERVER + '/attribute2')
+        .then(res=>res.data);
+    return {
+        type: T.GET_ATTRIBUTE2,
         payload: request,
     }
 };

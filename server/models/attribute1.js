@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const attribute_nameSchema = mongoose.Schema({
+const attribute1Schema = mongoose.Schema({
     name:{
         required: true,
         type: String,
@@ -9,4 +9,4 @@ const attribute_nameSchema = mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Attribute_name', attribute_nameSchema);
+module.exports = mongoose.model('Attribute1', attribute1Schema);

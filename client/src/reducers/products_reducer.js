@@ -17,10 +17,15 @@ export default (state = {}, action) => {
                 ...state,
                 brands: action.payload
             };
-        case T.GET_ATTRIBUTE_NAME:
+        case T.GET_ATTRIBUTE1:
             return {
                 ...state,
-                attribute_name: action.payload
+                attribute1: action.payload
+            };
+        case T.GET_ATTRIBUTE2:
+            return {
+                ...state,
+                attribute2: action.payload
             };
         default:
             return state;

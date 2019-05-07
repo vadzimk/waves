@@ -22,7 +22,8 @@ const admin = require('./middleware/admin');
 
 const User = require('./models/user');
 const Brand = require('./models/brand');
-const Attribute_name = require('./models/attribute_name');
+const Attribute1 = require('./models/attribute1');
+const Attribute2 = require('./models/attribute2');
 const Product = require('./models/product');
 
 //================= Product =================
@@ -38,7 +39,8 @@ app.get('/api/products/articles',(req,res)=>{
     Product
         .find()
         .populate('brand')
-        .populate('attribute_name')
+        .populate('attribute1')
+        .populate('attribute2')
         .sort([[sortBy, order]])
         .limit(limit)
         .exec((err, articles)=>{
@@ -65,7 +67,8 @@ app.get('/api/products/articles_by_id', (req,res)=>{
     Product
         .find({'_id':{$in:items}})
         .populate('brand')
-        .populate('attribute_name')
+        .populate('attribute1')
+        .populate('attribute2')
         .exec((err, docs)=>res.status(200).send(docs));
 });
 
@@ -81,27 +84,51 @@ app.post('/api/products/article', auth, admin, (req, res) => {
 });
 
 
-//================ Attribute_name ===========
+//================ Attribute1 ===========
 
-//create a new sort in the attribute_name
-app.post('/api/products/attribute_name', auth, admin, (req, res) => {
-    const attribute_name = new Attribute_name(req.body);
-    attribute_name.save((err, doc) => {
+//create a new sort in the attribute1
+app.post('/api/products/attribute1', auth, admin, (req, res) => {
+    const attribute1 = new Attribute1(req.body);
+    attribute1.save((err, doc) => {
         if (err) return res.json({success: false, err});
         res.status(200).json({
             success: true,
-            attribute_name: doc,
+            attribute1: doc,
         });
     });
 });
 
-//get all sorts of the attribute_name
-app.get('/api/products/attribute_names', (req, res) => {
-    Attribute_name.find({}, (err, attribute_names) => {
+//get all sorts of the attribute1
+app.get('/api/products/attribute1', (req, res) => {
+    Attribute1.find({}, (err, attribute1) => {
         if (err) return res.status(400).send(err);
-        res.status(200).send(attribute_names);
+        res.status(200).send(attribute1);
     });
 });
+
+
+//================ Attribute2 ===========
+
+//create a new sort in the attribute1
+app.post('/api/products/attribute2', auth, admin, (req, res) => {
+    const attribute2 = new Attribute2(req.body);
+    attribute2.save((err, doc) => {
+        if (err) return res.json({success: false, err});
+        res.status(200).json({
+            success: true,
+            attribute2: doc,
+        });
+    });
+});
+
+//get all sorts of the attribute1
+app.get('/api/products/attribute2', (req, res) => {
+    Attribute2.find({}, (err, attribute2) => {
+        if (err) return res.status(400).send(err);
+        res.status(200).send(attribute2);
+    });
+});
+
 
 
 //================ Brand ===============

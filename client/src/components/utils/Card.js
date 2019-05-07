@@ -9,6 +9,7 @@ class Card extends React.Component {
         } else {
             return '/images/image_not_available.jpg';
         }
+
     };
 
 
@@ -18,7 +19,7 @@ class Card extends React.Component {
         return (
             <div className={`card_item_wrapper ${props.grid}`}>
                 <div className="image"
-                     style={{bacground: `url(${this.renderCardImage(props.images)}) no-repeat`}}
+                     style={{background: `url(${this.renderCardImage(props.images)}) no-repeat`}}
                 >
                 </div>
                 <div className="action_container">

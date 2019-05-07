@@ -31,14 +31,15 @@ const productSchema = mongoose.Schema({
         required:true,
         type: Boolean
     },
-    attribute_name:{
+    attribute1:{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Attribute_name",
+        ref: "Attribute1",
         required: true,
     },
     attribute2:{
-        reqiured:true,
-        type: Number,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Attribute2",
+        required: true,
     },
     sold:{
         type: Number,
