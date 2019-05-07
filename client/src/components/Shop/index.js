@@ -4,16 +4,19 @@ import {connect} from 'react-redux';
 
 import {getBrands, getAttribute1, getAttribute2} from '../../actions/products_actions';
 import CollapseCheckbox from '../utils/CollapseCheckbox';
+import CollapseRadio from '../utils/CollapseRadio';
+
+import {price} from "../utils/Form/fixedCategories";
 
 
 class Shop extends React.Component {
 
-    state={
+    state = {
         grid: '',
         limit: 6,
         skip: 0,
         filters: {
-            brand:[],
+            brand: [],
             attribute1: [],
             attribute2: [],
             price: [],
@@ -26,9 +29,25 @@ class Shop extends React.Component {
         this.props.dispatch(getAttribute2());
     }
 
+    handlePrice = (value) => {
+        const data = price;
+        let array = [];
+        for (let key in data) {
+            if (data[key]._id === parseInt(value)) {
+                array= data[key].array;
+            }
+        }
+        return array;
+    };
+
     handleFilters = (filters, category) => {
         const newFilters = {...this.state.filters};
         newFilters[category] = filters;
+
+        if (category === "price") {
+            let priceValues = this.handlePrice(filters);
+            newFilters[category] = priceValues;
+        }
 
         this.setState({filters: newFilters});
     };
@@ -70,6 +89,15 @@ class Shop extends React.Component {
                                 title="attribute2 - Size"
                                 list={products.attribute2}/*a list of checkboxes: comes from redux store */
                                 handleFilters={(filters) => this.handleFilters(filters, 'attribute2')}
+
+                            />
+
+                            {/*====== price of the product model =============*/}
+                            <CollapseRadio
+                                initState={true} /*component open(expanded) when loaded*/
+                                title="Price"
+                                list={price}/*a list of checkboxes: comes from redux store */
+                                handleFilters={(filters) => this.handleFilters(filters, 'price')}
 
                             />
 
