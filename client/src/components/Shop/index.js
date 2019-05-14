@@ -73,6 +73,16 @@ class Shop extends React.Component {
             });
     };
 
+    loadMoreCards=()=>{
+        let skip = this.state.skip + this.state.limit;
+        this.props.dispatch(getProductsToShop(
+            skip,
+            this.state.limit,
+            this.state.filters,
+            this.props.products.toShop
+        )).then(()=>this.setState({skip}))
+    };
+
 
     render() {
 
@@ -136,7 +146,7 @@ class Shop extends React.Component {
                                 limit={this.state.limit}
                                 size={products.toShopSize}
                                 products={products.toShop}
-                                loadMore={()=>console.log("load more- from Shop.index.js")}
+                                loadMore={()=>this.loadMoreCards()}
 
                                 />
                             </div>

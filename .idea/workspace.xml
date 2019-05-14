@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c8f1c7c-51d6-47df-a1ac-1d7e09b540fc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/client/src/actions/products_actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/products_actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Shop/LoadMoreCards.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Shop/LoadMoreCards.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Shop/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Shop/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -44,14 +46,14 @@
         <counts>
           <entry key="css" value="10" />
           <entry key="html" value="1" />
-          <entry key="js" value="10758" />
+          <entry key="js" value="11204" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="10" />
           <entry key="HTML" value="1" />
-          <entry key="JavaScript" value="10758" />
+          <entry key="JavaScript" value="11204" />
         </counts>
       </usages-collector>
     </session>
@@ -61,20 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/Shop/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="822">
-              <caret line="138" column="88" selection-start-line="138" selection-start-column="88" selection-end-line="138" selection-end-column="88" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/components/Shop/LoadMoreCards.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+            <state relative-caret-position="400">
+              <caret line="77" column="30" lean-forward="true" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -83,6 +73,18 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/components/Shop/LoadMoreCards.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/components/utils/CardBlockShop.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="437">
@@ -136,8 +138,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/actions/products_actions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+            <state relative-caret-position="602">
+              <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -224,13 +226,13 @@
         <option value="$PROJECT_DIR$/client/src/components/utils/collapseRadio.js" />
         <option value="$PROJECT_DIR$/client/src/components/utils/CollapseRadio.js" />
         <option value="$PROJECT_DIR$/client/src/actions/types.js" />
-        <option value="$PROJECT_DIR$/client/src/actions/products_actions.js" />
         <option value="$PROJECT_DIR$/client/src/reducers/products_reducer.js" />
         <option value="$PROJECT_DIR$/client/src/components/utils/Form/fixedCategories.js" />
         <option value="$PROJECT_DIR$/server/server.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Shop/index.js" />
-        <option value="$PROJECT_DIR$/client/src/components/Shop/LoadMoreCards.js" />
         <option value="$PROJECT_DIR$/client/src/components/utils/CardBlockShop.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Shop/index.js" />
+        <option value="$PROJECT_DIR$/client/src/actions/products_actions.js" />
+        <option value="$PROJECT_DIR$/client/src/components/Shop/LoadMoreCards.js" />
       </list>
     </option>
   </component>
@@ -2451,18 +2453,18 @@
       <workItem from="1555307237927" duration="16061000" />
       <workItem from="1556078284339" duration="25709000" />
       <workItem from="1556527325719" duration="191000" />
-      <workItem from="1556529067586" duration="48063000" />
+      <workItem from="1556529067586" duration="50052000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107485000" />
+    <option name="totallyTimeSpent" value="109474000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="22" width="2576" height="1426" extended-state="7" />
+    <frame x="846" y="500" width="867" height="947" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09375" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23149236" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -2783,23 +2785,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/reducers/products_reducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="33" column="48" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/actions/products_actions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="583">
@@ -2807,10 +2792,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/Shop/LoadMoreCards.js">
+    <entry file="file://$PROJECT_DIR$/client/src/components/utils/CardBlockShop.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+        <state relative-caret-position="437">
+          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -2819,18 +2804,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/Shop/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="822">
-          <caret line="138" column="88" selection-start-line="138" selection-start-column="88" selection-end-line="138" selection-end-column="88" />
+        <state relative-caret-position="400">
+          <caret line="77" column="30" lean-forward="true" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/utils/CardBlockShop.js">
+    <entry file="file://$PROJECT_DIR$/client/src/actions/products_actions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+        <state relative-caret-position="602">
+          <caret line="39" column="34" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/reducers/products_reducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="33" column="48" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/Shop/LoadMoreCards.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
