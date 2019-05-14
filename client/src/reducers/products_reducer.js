@@ -27,6 +27,12 @@ export default (state = {}, action) => {
                 ...state,
                 attribute2: action.payload
             };
+        case T.GET_PRODUCTS_TO_SHOP:
+            return {
+                ...state,
+                toShop: action.payload.articles,
+                toShopSize: action.payload.size,
+            };
         default:
             return state;
     }

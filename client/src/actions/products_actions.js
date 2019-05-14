@@ -22,6 +22,27 @@ export const getProductsByArrival = () => {
     };
 };
 
+export const getProductsToShop=(skip, limit, filters=[], previousState=[])=>{
+    //data object will be sent to the db:
+    const data = {
+        limit,
+        skip,
+        filters
+    };
+
+    const request = axios.post(PRODUCT_SERVER + '/shop', data)
+        .then(res=>{
+            return {
+                size: res.data.size,
+                articles: res.data.articles,
+            }
+        });
+    return {
+        type: T.GET_PRODUCTS_TO_SHOP,
+        payload: request,
+    };
+};
+
 ///////////////////////////////
 // Categories //
 ///////////////////////////////

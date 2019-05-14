@@ -2,7 +2,7 @@ import React from 'react';
 import PageTop from '../utils/PageTop';
 import {connect} from 'react-redux';
 
-import {getBrands, getAttribute1, getAttribute2} from '../../actions/products_actions';
+import {getBrands, getAttribute1, getAttribute2, getProductsToShop} from '../../actions/products_actions';
 import CollapseCheckbox from '../utils/CollapseCheckbox';
 import CollapseRadio from '../utils/CollapseRadio';
 
@@ -24,9 +24,16 @@ class Shop extends React.Component {
     };
 
     componentDidMount() {
+        const {skip, limit, filters} = this.state;
+
         this.props.dispatch(getBrands());
         this.props.dispatch(getAttribute1());
         this.props.dispatch(getAttribute2());
+        //when shop loads we get default items:
+        this.props.dispatch(getProductsToShop(
+            skip,
+            limit,
+            filters));
     }
 
     handlePrice = (value) => {
@@ -34,7 +41,7 @@ class Shop extends React.Component {
         let array = [];
         for (let key in data) {
             if (data[key]._id === parseInt(value)) {
-                array= data[key].array;
+                array = data[key].array;
             }
         }
         return array;
@@ -49,12 +56,24 @@ class Shop extends React.Component {
             newFilters[category] = priceValues;
         }
 
+        this.showFilteredResults(newFilters);
         this.setState({filters: newFilters});
+    };
+
+    showFilteredResults=(filters)=>{
+        const { limit } = this.state;
+        this.props.dispatch(getProductsToShop(
+            0,
+            limit,
+            filters))
+            .then(()=>{this.setState(
+                {skip: 0}
+                )});
     };
 
 
     render() {
-        console.log("filters: ", this.state.filters);
+
         const {products} = this.props;
 
 
