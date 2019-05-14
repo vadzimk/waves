@@ -7,7 +7,7 @@ import CollapseCheckbox from '../utils/CollapseCheckbox';
 import CollapseRadio from '../utils/CollapseRadio';
 
 import {price} from "../utils/Form/fixedCategories";
-
+import LoadMoreCards from './LoadMoreCards';
 
 class Shop extends React.Component {
 
@@ -60,15 +60,17 @@ class Shop extends React.Component {
         this.setState({filters: newFilters});
     };
 
-    showFilteredResults=(filters)=>{
-        const { limit } = this.state;
+    showFilteredResults = (filters) => {
+        const {limit} = this.state;
         this.props.dispatch(getProductsToShop(
             0,
             limit,
             filters))
-            .then(()=>{this.setState(
-                {skip: 0}
-                )});
+            .then(() => {
+                this.setState(
+                    {skip: 0}
+                )
+            });
     };
 
 
@@ -123,7 +125,21 @@ class Shop extends React.Component {
 
                         </div>
                         <div className="right">
-                            right
+                            <div className="shop_options">
+                                <div className="shop_grids clear">
+                                    grids
+                                </div>
+                            </div>
+                            <div>
+                                <LoadMoreCards
+                                grid={this.state.grid}
+                                limit={this.state.limit}
+                                size={products.toShopSize}
+                                products={products.toShop}
+                                loadMore={()=>console.log("load more- from Shop.index.js")}
+
+                                />
+                            </div>
                         </div>
 
                     </div>
