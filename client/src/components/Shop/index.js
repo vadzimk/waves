@@ -8,6 +8,9 @@ import CollapseRadio from '../utils/CollapseRadio';
 
 import {price} from "../utils/Form/fixedCategories";
 import LoadMoreCards from './LoadMoreCards';
+import FontAwsomeIcon from '@fortawesome/react-fontawesome';
+import faBars from '@fortawesome/fontawesome-free-solid/faBars';
+import faTh from '@fortawesome/fontawesome-free-solid/faTh';
 
 class Shop extends React.Component {
 
@@ -83,6 +86,12 @@ class Shop extends React.Component {
         )).then(()=>this.setState({skip}))
     };
 
+    handleGrid =()=>{
+        this.setState({
+            grid: !this.state.grid ? 'grid_bars' : ''
+        })
+    };
+
 
     render() {
 
@@ -137,7 +146,16 @@ class Shop extends React.Component {
                         <div className="right">
                             <div className="shop_options">
                                 <div className="shop_grids clear">
-                                    grids
+                                    <div className={`grid_btn ${this.state.grid ? '' : 'active'}`}
+                                    onClick={()=>this.handleGrid()}>
+                                        <FontAwsomeIcon icon={faTh}/>
+
+                                    </div>
+                                    <div className={`grid_btn ${!this.state.grid ? '' : 'active'}`}
+                                         onClick={()=>this.handleGrid()}>
+                                        <FontAwsomeIcon icon={faBars}/>
+
+                                    </div>
                                 </div>
                             </div>
                             <div>
@@ -147,7 +165,6 @@ class Shop extends React.Component {
                                 size={products.toShopSize}
                                 products={products.toShop}
                                 loadMore={()=>this.loadMoreCards()}
-
                                 />
                             </div>
                         </div>

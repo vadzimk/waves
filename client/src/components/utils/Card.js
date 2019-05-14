@@ -36,7 +36,9 @@ class Card extends React.Component {
 
                     </div>
                     {props.grid ?
-                        <div className="description">Here goes the description from the database</div>
+                        <div className="description">
+                            {props.description}
+                        </div>
                         : null
                     }
 
