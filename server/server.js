@@ -47,6 +47,9 @@ app.post('/api/products/shop', (req, res) => {
             }
         }
     }
+
+    findArgs['publish'] = true; // brings only the articles with publish property set to true
+
     Product
         .find(findArgs)
         .populate('brand')

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 
 const links = [
     {
@@ -19,16 +20,34 @@ const links = [
 
 ];
 
+//admin section of the dashboard
+const admin = [
+    {
+        name: "Site info",
+        linkTo: "/user/site_info"
+    },
+    {
+        name: "Add product",
+        linkTo: "/admin/add_product"
+    },
+    {
+        name: "Manage categories",
+        linkTo: "/user/manage_categories"
+    },
+
+
+];
+
 const UserLayout = (props) => {
-    const generateLinks = () => (
-            links.map((item, i) => (
-                <Link to={item.linkTo}
-                      key={i}
-                >
-                    {item.name}
-                </Link>
-            ))
-        );
+    const generateLinks = (links) => (
+        links.map((item, i) => (
+            <Link to={item.linkTo}
+                  key={i}
+            >
+                {item.name}
+            </Link>
+        ))
+    );
 
     return (
         <div className="container">
@@ -38,8 +57,17 @@ const UserLayout = (props) => {
                     <div className="links">
                         {generateLinks(links)}
                     </div>
-
+                    {props.user.userData.isAdmin ?
+                        <div>
+                            <h2>Administrator</h2>
+                            <div className="links">
+                                {generateLinks(admin)}
+                            </div>
+                        </div>
+                        : null
+                    }
                 </div>
+
                 <div className="user_right">
                     {props.children}
                 </div>
@@ -50,4 +78,10 @@ const UserLayout = (props) => {
     );
 };
 
-export default UserLayout;
+const mapStateToProps = (state) => {
+    return {
+        user: state.user//prop: state.prop
+    }
+};
+
+export default connect(mapStateToProps)(UserLayout);

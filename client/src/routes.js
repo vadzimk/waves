@@ -7,6 +7,7 @@ import Register from './components/Register_login/register';
 import UserDashboard from './components/UserDashboard';
 import Auth from './hoc/Auth';
 import Shop from './components/Shop';
+import AddProduct from "./components/UserDashboard/Admin/AddProduct";
 
 
 const Routes = () =>{
@@ -19,6 +20,8 @@ const Routes = () =>{
                 for inbetween the 2nd argument is false
                 */}
                 <Route exact path="/user/dashboard" component={Auth(UserDashboard, true)}/>
+                <Route exact path="/admin/add_product" component={Auth(AddProduct, true)}/>
+
                 <Route path="/register_login" component={Auth(RegisterLogin, false)}/>
                 <Route exact path="/register" component={Auth(Register, false)} />
                 <Route exact path="/shop" component={Auth(Shop, null)}/>
