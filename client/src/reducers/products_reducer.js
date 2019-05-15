@@ -33,6 +33,16 @@ export default (state = {}, action) => {
                 toShop: action.payload.articles,
                 toShopSize: action.payload.size,
             };
+        case T.ADD_PRODUCT:
+            return {
+                ...state,
+                addProduct: action.payload,
+            };
+        case T.CLEAR_PRODUCT:
+            return {
+                ...state,
+                addProduct: action.payload,
+            };
         default:
             return state;
     }

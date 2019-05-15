@@ -1,14 +1,14 @@
 import React from 'react';
 import UserLayout from '../../../hoc/UserLayout';
 import FormField from '../../utils/Form/formField';
-import {update, generateData, isFormValid, populateOptionFields} from "../../utils/Form/formActions";
+import {update, generateData, isFormValid, populateOptionFields, resetFields} from "../../utils/Form/formActions";
 import {connect} from 'react-redux';
-import {getBrands, getAttribute1, getAttribute2} from "../../../actions/products_actions";
+import {getBrands, getAttribute1, getAttribute2, addProduct, clearProduct} from "../../../actions/products_actions";
 
 class AddProduct extends React.Component {
 
     state = {
-        formError: false,
+        formErr: false,
         formSuccess: false,
         formdata: {
             name: {
@@ -195,6 +195,53 @@ class AddProduct extends React.Component {
         })
     };
 
+
+    updateForm = (element) => {
+        const newFormdata = update(element, this.state.formdata, 'products');
+        this.setState({
+            formErr: false,
+            formdata: newFormdata,
+        });
+    };
+
+    resetFieldsHandler = () => {
+        //Resets all form fields when form is submitted successfully
+        const newFormData = resetFields(this.state.formdata, 'products');
+
+        this.setState({
+            formSuccess: true,
+            formdata: newFormData,
+        });
+        setTimeout(() => {
+            this.setState({
+                formSuccess: false,
+            },()=>{
+                this.props.dispatch(clearProduct())
+            })
+        }, 3000);
+    };
+
+    submitForm = (event) => {
+        event.preventDefault();
+        let dataToSubmit = generateData(this.state.formdata, 'products');
+
+        const formIsValid = isFormValid(this.state.formdata, 'products');
+        if (formIsValid) {
+            //dispatch the action to send data to the server
+            this.props.dispatch(addProduct(dataToSubmit)).then(() => {
+                if (this.props.products.addProduct.success) {
+                    this.resetFieldsHandler();
+                } else {
+                    this.setState({formErr: true})
+                }
+            })
+        } else {
+            this.setState({
+                formErr: true,
+            })
+        }
+    };
+
     componentDidMount() {
         const {formdata} = this.state;
 
@@ -214,9 +261,6 @@ class AddProduct extends React.Component {
         });
     }
 
-    submitForm = (event) => {
-
-    };
 
     render() {
         return (

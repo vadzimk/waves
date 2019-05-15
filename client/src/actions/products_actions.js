@@ -46,6 +46,24 @@ export const getProductsToShop=(skip, limit, filters=[], previousState=[])=>{
     };
 };
 
+//Adds a new product to the db
+export const addProduct =(dataToSubmit)=>{
+    const request = axios.post(PRODUCT_SERVER + '/article', dataToSubmit).then(res=>res.data);
+    return {
+        type: T.ADD_PRODUCT,
+        payload: request,
+    };
+};
+
+//Clears the redux store from the last added new product
+export const clearProduct =()=>{
+    return {
+        type: T.CLEAR_PRODUCT,
+        payload: '',
+    };
+};
+
+
 ///////////////////////////////
 // Categories //
 ///////////////////////////////
