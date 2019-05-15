@@ -1,3 +1,4 @@
+//for the price section of filters
 const price = [
     {
         "_id": 0,

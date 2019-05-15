@@ -8,8 +8,8 @@ export const validate = (element, formdata = []) => {
         error = !valid ? [valid, message] : error;
     }
 
-    if(element.validation.confirm){
-        const valid = element.value.trim()===formdata[element.validation.confirm].value;
+    if (element.validation.confirm) {
+        const valid = element.value.trim() === formdata[element.validation.confirm].value;
         const message = !valid ? 'Passwords do not match' : '';
         error = !valid ? [valid, message] : error;
     }
@@ -48,7 +48,7 @@ export const update = (element, formdata, formName) => {
 export const generateData = (formdata, formName) => {
     let dataToSubmit = {};
     for (let key in formdata) {
-        if(key!=='confirmPassword'){
+        if (key !== 'confirmPassword') {
             dataToSubmit[key] = formdata[key].value;
         }
     }
@@ -57,9 +57,20 @@ export const generateData = (formdata, formName) => {
 
 export const isFormValid = (formdata, formName) => {
     let formIsValid = true;
-    for(let key in formdata){
-formIsValid = formdata[key].valid && formIsValid;
+    for (let key in formdata) {
+        formIsValid = formdata[key].valid && formIsValid;
     }
 
     return formIsValid;
+};
+
+export const populateOptionFields = (formdata, arrayData = [], field) => {
+    const newArray = [];
+    const newFormdata = {...formdata};
+    arrayData.forEach(item => {
+        newArray.push({key: item._id, value: item.name})
+    });
+
+    newFormdata[field].config.options = newArray;
+    return newFormdata;
 };

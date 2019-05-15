@@ -1,7 +1,7 @@
 import React from 'react';
 import UserLayout from '../../../hoc/UserLayout';
 import FormField from '../../utils/Form/formField';
-import {update, generateData, isFormValid} from "../../utils/Form/formActions";
+import {update, generateData, isFormValid, populateOptionFields} from "../../utils/Form/formActions";
 import {connect} from 'react-redux';
 import {getBrands, getAttribute1, getAttribute2} from "../../../actions/products_actions";
 
@@ -15,7 +15,7 @@ class AddProduct extends React.Component {
                 element: 'input',
                 value: '',
                 config: {
-                    label: 'Product name',
+                    label: 'Name',
                     name: 'name_input',
                     type: 'text',
                     placeholder: 'Enter product name'
@@ -32,7 +32,7 @@ class AddProduct extends React.Component {
                 element: 'textarea',
                 value: '',
                 config: {
-                    label: 'Product description',
+                    label: 'Description',
                     name: 'description_input',
                     type: 'text',
                     placeholder: 'Enter product description'
@@ -49,7 +49,7 @@ class AddProduct extends React.Component {
                 element: 'input',
                 value: '',
                 config: {
-                    label: 'Product price',
+                    label: 'Price',
                     name: 'price_input',
                     type: 'number',
                     placeholder: 'Enter product price'
@@ -66,7 +66,7 @@ class AddProduct extends React.Component {
                 element: 'select',
                 value: '',
                 config: {
-                    label: 'Product Brand',
+                    label: 'Brand',
                     name: 'brands_input',
                     options: [],
                 },
@@ -82,7 +82,7 @@ class AddProduct extends React.Component {
                 element: 'select',
                 value: '',
                 config: {
-                    label: 'Product Shipping',
+                    label: 'Shipping',
                     name: 'shipping_input',
                     options: [
                         {
@@ -107,7 +107,7 @@ class AddProduct extends React.Component {
                 element: 'select',
                 value: '',
                 config: {
-                    label: 'Product Available',
+                    label: 'Available',
                     name: 'available_input',
                     options: [
                         {
@@ -132,7 +132,7 @@ class AddProduct extends React.Component {
                 element: 'select',
                 value: '',
                 config: {
-                    label: 'Product attribute1',
+                    label: 'attribute1',
                     name: 'attribute1_input',
                     options: [],
                 },
@@ -148,7 +148,7 @@ class AddProduct extends React.Component {
                 element: 'select',
                 value: '',
                 config: {
-                    label: 'Product attribute2',
+                    label: 'attribute2',
                     name: 'attribute2_input',
                     options: [],
                 },
@@ -164,7 +164,7 @@ class AddProduct extends React.Component {
                 element: 'select',
                 value: '',
                 config: {
-                    label: 'Product Publish',
+                    label: 'Publish',
                     name: 'publish_input',
                     options: [
                         {
@@ -188,7 +188,33 @@ class AddProduct extends React.Component {
         }
     };
 
-    submitForm=(event)=>{
+
+    updateFields = (newFormData) => {
+        this.setState({
+            formdata: newFormData,
+        })
+    };
+
+    componentDidMount() {
+        const {formdata} = this.state;
+
+        this.props.dispatch(getBrands()).then(res => {
+            const newFormData = populateOptionFields(formdata, this.props.products.brands, 'brand');
+            this.updateFields(newFormData)
+        });
+
+        this.props.dispatch(getAttribute1()).then(res => {
+            const newFormData = populateOptionFields(formdata, this.props.products.attribute1, 'attribute1');
+            this.updateFields(newFormData)
+        });
+
+        this.props.dispatch(getAttribute2()).then(res => {
+            const newFormData = populateOptionFields(formdata, this.props.products.attribute2, 'attribute2');
+            this.updateFields(newFormData)
+        });
+    }
+
+    submitForm = (event) => {
 
     };
 
@@ -196,13 +222,74 @@ class AddProduct extends React.Component {
         return (
             <UserLayout>
                 <div>
-                    <h1>Add product</h1>
-                    <form onSubmit={(e)=>this.submitForm()}>
+                    <h1>Add a new product</h1>
+                    <form onSubmit={(e) => this.submitForm()}>
                         <FormField
                             id={'name'}
                             formdata={this.state.formdata.name}
                             change={(element) => this.updateForm(element)}
                         />
+                        <FormField
+                            id={'description'}
+                            formdata={this.state.formdata.description}
+                            change={(element) => this.updateForm(element)}
+                        />
+                        <FormField
+                            id={'price'}
+                            formdata={this.state.formdata.price}
+                            change={(element) => this.updateForm(element)}
+                        />
+                        <div className="form_devider"></div>
+                        <FormField
+                            id={'brand'}
+                            formdata={this.state.formdata.brand}
+                            change={(element) => this.updateForm(element)}
+                        />
+                        <FormField
+                            id={'shipping'}
+                            formdata={this.state.formdata.shipping}
+                            change={(element) => this.updateForm(element)}
+                        />
+                        <FormField
+                            id={'available'}
+                            formdata={this.state.formdata.available}
+                            change={(element) => this.updateForm(element)}
+                        />
+                        <div className="form_devider"></div>
+                        <FormField
+                            id={'attribute1'}
+                            formdata={this.state.formdata.attribute1}
+                            change={(element) => this.updateForm(element)}
+                        />
+                        <FormField
+                            id={'attribute2'}
+                            formdata={this.state.formdata.attribute2}
+                            change={(element) => this.updateForm(element)}
+                        />
+                        <div className="form_devider"></div>
+                        <FormField
+                            id={'publish'}
+                            formdata={this.state.formdata.publish}
+                            change={(element) => this.updateForm(element)}
+                        />
+
+                        {/*submit the form*/}
+
+                        {this.state.formSuccess ?
+                            <div className="form_success">
+                                Success
+                            </div>
+                            : null
+                        }
+                        {this.state.formErr ?
+                            <div className="error_label">
+                                Please check your input
+                            </div>
+                            : null}
+                        <button onClick={
+                            (event) => this.submitForm(event)}>
+                            Save product
+                        </button>
 
                     </form>
                 </div>

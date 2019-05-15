@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 
 const links = [
     {
-        name: "My account",
+        name: "User account",
         linkTo: "/user/dashboard"
     },
     {
@@ -14,7 +14,7 @@ const links = [
         linkTo: "/user/user_profile"
     },
     {
-        name: "My Cart",
+        name: "Shopping Cart",
         linkTo: "/user/cart"
     },
 
@@ -27,7 +27,7 @@ const admin = [
         linkTo: "/user/site_info"
     },
     {
-        name: "Add product",
+        name: "Add a new product",
         linkTo: "/admin/add_product"
     },
     {
@@ -53,7 +53,7 @@ const UserLayout = (props) => {
         <div className="container">
             <div className="user_container ">
                 <div className="user_left_nav">
-                    <h2>My acconunt</h2>
+                    <h2>User</h2>
                     <div className="links">
                         {generateLinks(links)}
                     </div>
