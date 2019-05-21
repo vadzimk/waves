@@ -40,6 +40,14 @@ class FileUpload extends React.Component {
     onRemove=(id)=>{
         //removes the image in Cloudinary db
         //need to create a route to unset an image from Cloudinary
+
+        axios.get('/api/users/remove_image?public_id='+id)
+            .then(res=>{
+                let images = this.state.uploadedFiles.filter(item=>item.public_id!==id);
+                this.setState({
+                    uploadedFiles: images,
+                }, ()=>this.props.imagesHandler(images))
+            });
     };
 
     showUploadedImages = () => (
@@ -58,6 +66,15 @@ class FileUpload extends React.Component {
             </div>
         ))
     );
+
+    static getDerivedStateFromProps=(props, state)=>{
+        if(props.reset){
+            return state={
+                uploadedFiles:[]
+            };
+        }
+        return null;
+    };
 
     render() {
         return (

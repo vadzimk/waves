@@ -257,11 +257,25 @@ app.get('/api/users/logout', auth, (req, res) => {
     });
 });
 
-app.post('/api/users/upload_image', auth, admin, formidable(), (req, res)=>{
+
+//upload an image on the Add a new product section of Admin dashboard
+app.post('/api/users/upload_image', auth, admin, formidable(), (req, res) => {
     cloudinary.uploader.upload(
         req.files.file.path,
-        (result)=>{console.log(result); res.status(200).send({public_id: result.public_id, url: result.url})},
-        {public_id: `${Date.now()}`, resource_type:'auto'})
+        (result) => {
+            console.log(result);
+            res.status(200).send({public_id: result.public_id, url: result.url})
+        },
+        {public_id: `${Date.now()}`, resource_type: 'auto'})
+});
+
+//remove an image from Cloudinary at the add a new product section of Admin dashboard
+app.get('/api/users/remove_image', auth, admin, (req, res) => {
+    let image_id = req.query.public_id;
+    cloudinary.uploader.destroy(image_id, (err, result)=>{
+        if(err)return res.json({success: false, err});
+        res.status(200).send('ok');
+    })
 });
 
 const port = process.env.PORT || 3002;
