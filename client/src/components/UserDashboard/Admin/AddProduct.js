@@ -272,6 +272,15 @@ class AddProduct extends React.Component {
         });
     }
 
+    imagesHandler=(images)=>{
+//add new images to the state
+        const newFormData = {
+            ...this.state.formdata
+        };
+        newFormData['images'].value =images;
+        newFormData['images'].valid =true;
+        this.setState({formdata: newFormData});
+    };
 
     render() {
         return (

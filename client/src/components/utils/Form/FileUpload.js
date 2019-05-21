@@ -14,6 +14,7 @@ class FileUpload extends React.Component {
 
     };
 
+
     onDrop = (files) => {
         this.setState({uploading: true});
         let formData = new FormData();
@@ -21,7 +22,7 @@ class FileUpload extends React.Component {
             header: {'content-type': 'multipart/form-data'}
         };
         formData.append("file", files[0]);
-        axios.post('/api/users/uploadimage', formData, config)
+        axios.post('/api/users/upload_image', formData, config)
             .then(res => {
                 this.setState({
                         uploading: false,
@@ -36,9 +37,27 @@ class FileUpload extends React.Component {
             })
     };
 
-    showUploadedImages = () => {
-
+    onRemove=(id)=>{
+        //removes the image in Cloudinary db
+        //need to create a route to unset an image from Cloudinary
     };
+
+    showUploadedImages = () => (
+        this.state.uploadedFiles.map(item=>(
+            <div className="dropzone_box"
+                key={item.public_id}
+                onClick={()=>this.onRemove(item.public_id)}
+            >
+                <div className="wrap"
+                style={{background: `url(${item.url}) no-repeat`}}
+                >
+
+
+                </div>
+
+            </div>
+        ))
+    );
 
     render() {
         return (

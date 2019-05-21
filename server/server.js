@@ -1,6 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser'); //bring json from http request
 const cookieParser = require('cookie-parser');
+const formidable = require('express-formidable'); //use to handle files in requests to the server
+const cloudinary = require('cloudinary'); //hosting images
+
+
 const mongoose = require('mongoose');
 require('dotenv').config(); //handle the .env import
 
@@ -14,6 +18,14 @@ mongoose.set('useCreateIndex', true); //get rid of warning
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cookieParser());
+
+//configure Cloudinary
+cloudinary.config({
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.CLOUD_API_KEY,
+    api_secret: process.env.CLOUD_API_SECRET,
+});
+
 const auth = require('./middleware/auth');
 const admin = require('./middleware/admin');
 
@@ -58,8 +70,8 @@ app.post('/api/products/shop', (req, res) => {
         .sort([[sortBy, order]])
         .skip(skip)
         .limit(limit)
-        .exec((err, articles)=>{
-            if(err) return res.status(400).send(err);
+        .exec((err, articles) => {
+            if (err) return res.status(400).send(err);
             res.status(200).json({
                 size: articles.length,
                 articles,
@@ -243,6 +255,13 @@ app.get('/api/users/logout', auth, (req, res) => {
         if (err) return res.json({success: false, err});
         return res.status(200).send({success: true});
     });
+});
+
+app.post('/api/users/upload_image', auth, admin, formidable(), (req, res)=>{
+    cloudinary.uploader.upload(
+        req.files.file.path,
+        (result)=>{console.log(result); res.status(200).send({public_id: result.public_id, url: result.url})},
+        {public_id: `${Date.now()}`, resource_type:'auto'})
 });
 
 const port = process.env.PORT || 3002;
