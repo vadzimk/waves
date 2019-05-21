@@ -1,9 +1,10 @@
 import React from 'react';
 import UserLayout from '../../../hoc/UserLayout';
-import FormField from '../../utils/Form/formField';
+import FormField from '../../utils/Form/FormField';
 import {update, generateData, isFormValid, populateOptionFields, resetFields} from "../../utils/Form/formActions";
 import {connect} from 'react-redux';
 import {getBrands, getAttribute1, getAttribute2, addProduct, clearProduct} from "../../../actions/products_actions";
+import FileUpload from '../../utils/Form/FileUpload';
 
 class AddProduct extends React.Component {
 
@@ -185,6 +186,16 @@ class AddProduct extends React.Component {
                 validationMessage: '',
                 showLabel: true
             },
+            images:{
+                value: [],
+                validation:{
+                    required: false
+                },
+                valid: true,
+                touched: false,
+                validationMessage: '',
+                showLabel: false
+            },
         }
     };
 
@@ -268,6 +279,10 @@ class AddProduct extends React.Component {
                 <div>
                     <h1>Add a new product</h1>
                     <form onSubmit={(e) => this.submitForm()}>
+                        <FileUpload
+                            imagesHandler={(images)=>this.imagesHandler(images)}
+                            reset={this.state.formSuccess}
+                        />
                         <FormField
                             id={'name'}
                             formdata={this.state.formdata.name}
