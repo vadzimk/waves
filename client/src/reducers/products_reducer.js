@@ -17,6 +17,12 @@ export default (state = {}, action) => {
                 ...state,
                 brands: action.payload
             };
+        case T.ADD_BRAND:
+            return {
+                ...state,
+                addBrand: action.payload.success,
+                brands: action.payload.brands,
+            };
         case T.GET_ATTRIBUTE1:
             return {
                 ...state,

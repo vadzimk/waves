@@ -8,6 +8,8 @@ import UserDashboard from './components/UserDashboard';
 import Auth from './hoc/Auth';
 import Shop from './components/Shop';
 import AddProduct from "./components/UserDashboard/Admin/AddProduct";
+import ManageCategories from './components/UserDashboard/Admin/ManageCategories';
+
 
 
 const Routes = () =>{
@@ -21,6 +23,7 @@ const Routes = () =>{
                 */}
                 <Route exact path="/user/dashboard" component={Auth(UserDashboard, true)}/>
                 <Route exact path="/admin/add_product" component={Auth(AddProduct, true)}/>
+                <Route exact path="/admin/manage_categories" component={Auth(ManageCategories, true)}/>
 
                 <Route path="/register_login" component={Auth(RegisterLogin, false)}/>
                 <Route exact path="/register" component={Auth(Register, false)} />

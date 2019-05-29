@@ -5,8 +5,8 @@ import {PRODUCT_SERVER} from "../components/utils/misc";
 
 export const getProductsBySell = () => {
     //articles?sortBy=sold&order=desc&limit=4
-    const request = axios.get(PRODUCT_SERVER+'/articles?sortBy=sold&order=desc&limit=4')
-        .then(res=>res.data);
+    const request = axios.get(PRODUCT_SERVER + '/articles?sortBy=sold&order=desc&limit=4')
+        .then(res => res.data);
     return {
         type: T.GET_PRODUCTS_BY_SELL,
         payload: request,
@@ -14,15 +14,15 @@ export const getProductsBySell = () => {
 };
 export const getProductsByArrival = () => {
     //articles?sortBy=createdAt&order=desc&limit=4
-    const request = axios.get(PRODUCT_SERVER+'/articles?sortBy=createdAt&order=desc&limit=4')
-        .then(res=>res.data);
-    return{
+    const request = axios.get(PRODUCT_SERVER + '/articles?sortBy=createdAt&order=desc&limit=4')
+        .then(res => res.data);
+    return {
         type: T.GET_PRODUCTS_BY_ARRIVAL,
         payload: request,
     };
 };
 
-export const getProductsToShop=(skip, limit, filters=[], previousState=[])=>{
+export const getProductsToShop = (skip, limit, filters = [], previousState = []) => {
     //data object will be sent to the db:
     const data = {
         limit,
@@ -31,8 +31,8 @@ export const getProductsToShop=(skip, limit, filters=[], previousState=[])=>{
     };
 
     const request = axios.post(PRODUCT_SERVER + '/shop', data)
-        .then(res=>{
-            let newState=[
+        .then(res => {
+            let newState = [
                 ...previousState,
                 ...res.data.articles];
             return {
@@ -47,8 +47,8 @@ export const getProductsToShop=(skip, limit, filters=[], previousState=[])=>{
 };
 
 //Adds a new product to the db
-export const addProduct =(dataToSubmit)=>{
-    const request = axios.post(PRODUCT_SERVER + '/article', dataToSubmit).then(res=>res.data);
+export const addProduct = (dataToSubmit) => {
+    const request = axios.post(PRODUCT_SERVER + '/article', dataToSubmit).then(res => res.data);
     return {
         type: T.ADD_PRODUCT,
         payload: request,
@@ -56,7 +56,7 @@ export const addProduct =(dataToSubmit)=>{
 };
 
 //Clears the redux store from the last added new product
-export const clearProduct =()=>{
+export const clearProduct = () => {
     return {
         type: T.CLEAR_PRODUCT,
         payload: '',
@@ -68,27 +68,47 @@ export const clearProduct =()=>{
 // Categories //
 ///////////////////////////////
 
-export const getBrands =()=>{
+export const getBrands = () => {
     const request = axios.get(PRODUCT_SERVER + '/brands')
-        .then(res=>res.data);
+        .then(res => res.data);
     return {
         type: T.GET_BRANDS,
         payload: request,
     }
 };
 
-export const getAttribute1 =()=>{
+export const addBrand = (dataToSubmit, existingBrands) => {
+    const request = axios.post(PRODUCT_SERVER + '/brand', dataToSubmit)
+        .then(res => {
+            let brands = [
+                ...existingBrands,
+                res.data.brand,
+            ];
+            return {
+                success: res.data.success,
+                brands
+            }
+        });
+
+    //didn't catch error from the server in case request was unsuccessful
+    return {
+        type: T.ADD_BRAND,
+        payload: request
+    };
+};
+
+export const getAttribute1 = () => {
     const request = axios.get(PRODUCT_SERVER + '/attribute1')
-        .then(res=>res.data);
+        .then(res => res.data);
     return {
         type: T.GET_ATTRIBUTE1,
         payload: request,
     }
 };
 
-export const getAttribute2 =()=>{
+export const getAttribute2 = () => {
     const request = axios.get(PRODUCT_SERVER + '/attribute2')
-        .then(res=>res.data);
+        .then(res => res.data);
     return {
         type: T.GET_ATTRIBUTE2,
         payload: request,

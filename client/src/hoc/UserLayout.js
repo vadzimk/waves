@@ -32,7 +32,7 @@ const admin = [
     },
     {
         name: "Manage categories",
-        linkTo: "/user/manage_categories"
+        linkTo: "/admin/manage_categories"
     },
 
 
