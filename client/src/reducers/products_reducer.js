@@ -49,6 +49,11 @@ export default (state = {}, action) => {
                 ...state,
                 addProduct: action.payload,
             };
+        case T.CLEAR_BRAND:
+            return {
+                ...state,
+                addBrand: action.payload,
+            };
         default:
             return state;
     }

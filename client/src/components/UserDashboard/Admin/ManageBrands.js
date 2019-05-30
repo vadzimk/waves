@@ -1,7 +1,7 @@
 import React from 'react';
 import {update, generateData, isFormValid, resetFields} from "../../utils/Form/formActions";
 import {connect} from 'react-redux';
-import {getBrands} from "../../../actions/products_actions";
+import {getBrands, addBrand, clearProduct, clearBrand} from "../../../actions/products_actions";
 import FormField from "../../utils/Form/FormField";
 
 class ManageBrands extends React.Component {
@@ -49,14 +49,38 @@ class ManageBrands extends React.Component {
         });
     };
 
+    resetFieldsHandler = () => {
+        //Resets all form fields when form is submitted successfully
+        const newFormData = resetFields(this.state.formdata, 'brands');
+
+        this.setState({
+            formSuccess: true,
+            formdata: newFormData,
+        });
+        setTimeout(() => {
+            this.setState({
+                formSuccess: false,
+            },()=>{
+                this.props.dispatch(clearBrand())
+            })
+        }, 3000);
+    };
+
     submitForm = (event) => {
         event.preventDefault();
 
         let dataToSubmit = generateData(this.state.formdata, 'brands');
         let formIsValid = isFormValid(this.state.formdata, 'brands');
+        let existingBrands = this.props.products.brands;
 
         if(formIsValid){
-            console.log(dataToSubmit);
+            this.props.dispatch(addBrand(dataToSubmit, existingBrands)).then(response=>{
+                if(response.payload.success){
+this.resetFieldsHandler();
+                }else{
+this.setState({formErr: true});
+                }
+            })
         } else {
             this.setState({
                 formErr: true

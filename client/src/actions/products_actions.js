@@ -97,6 +97,14 @@ export const addBrand = (dataToSubmit, existingBrands) => {
     };
 };
 
+//Clears the redux store from the last added new product
+export const clearBrand = () => {
+    return {
+        type: T.CLEAR_BRAND,
+        payload: '',
+    };
+};
+
 export const getAttribute1 = () => {
     const request = axios.get(PRODUCT_SERVER + '/attribute1')
         .then(res => res.data);

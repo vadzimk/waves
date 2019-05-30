@@ -12,4 +12,5 @@ export const T = {
     ADD_PRODUCT: 'ADD_PRODUCT',
     CLEAR_PRODUCT: 'CLEAR_PRODUCT',
     ADD_BRAND: 'ADD_BRAND',
+    CLEAR_BRAND: 'CLEAR_BRAND',
     };
