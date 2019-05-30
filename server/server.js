@@ -138,7 +138,7 @@ app.post('/api/products/article', auth, admin, (req, res) => {
 
 //================ Attribute1 ===========
 
-//create a new sort in the attribute1
+//create a new value in the attribute1
 app.post('/api/products/attribute1', auth, admin, (req, res) => {
     const attribute1 = new Attribute1(req.body);
     attribute1.save((err, doc) => {
@@ -150,7 +150,7 @@ app.post('/api/products/attribute1', auth, admin, (req, res) => {
     });
 });
 
-//get all sorts of the attribute1
+//get all values of the attribute1
 app.get('/api/products/attribute1', (req, res) => {
     Attribute1.find({}, (err, attribute1) => {
         if (err) return res.status(400).send(err);
@@ -161,7 +161,7 @@ app.get('/api/products/attribute1', (req, res) => {
 
 //================ Attribute2 ===========
 
-//create a new sort in the attribute1
+//create a new value in the attribute1
 app.post('/api/products/attribute2', auth, admin, (req, res) => {
     const attribute2 = new Attribute2(req.body);
     attribute2.save((err, doc) => {
@@ -173,7 +173,7 @@ app.post('/api/products/attribute2', auth, admin, (req, res) => {
     });
 });
 
-//get all sorts of the attribute1
+//get all values of the attribute2
 app.get('/api/products/attribute2', (req, res) => {
     Attribute2.find({}, (err, attribute2) => {
         if (err) return res.status(400).send(err);

@@ -23,10 +23,26 @@ export default (state = {}, action) => {
                 addBrand: action.payload.success,
                 brands: action.payload.brands,
             };
+        case T.CLEAR_BRAND:
+            return {
+                ...state,
+                addBrand: action.payload,
+            };
         case T.GET_ATTRIBUTE1:
             return {
                 ...state,
                 attribute1: action.payload
+            };
+        case T.ADD_ATTRIBUTE1:
+            return {
+                ...state,
+                addAttribute1: action.payload,
+                attribute1: action.payload.attribute1,
+            };
+        case T.CLEAR_ATTRIBUTE1:
+            return {
+                ...state,
+                addAttribute1: action.payload,
             };
         case T.GET_ATTRIBUTE2:
             return {
@@ -49,11 +65,7 @@ export default (state = {}, action) => {
                 ...state,
                 addProduct: action.payload,
             };
-        case T.CLEAR_BRAND:
-            return {
-                ...state,
-                addBrand: action.payload,
-            };
+
         default:
             return state;
     }

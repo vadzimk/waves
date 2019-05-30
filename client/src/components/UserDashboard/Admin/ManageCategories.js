@@ -7,6 +7,7 @@ const ManageCategories =()=>{
   return(
       <UserLayout>
           <ManageBrands/>
+          <ManageAttribute1/>
 
       </UserLayout>
   );

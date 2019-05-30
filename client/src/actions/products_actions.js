@@ -97,7 +97,7 @@ export const addBrand = (dataToSubmit, existingBrands) => {
     };
 };
 
-//Clears the redux store from the last added new product
+//Clears the redux store from the last added new brand
 export const clearBrand = () => {
     return {
         type: T.CLEAR_BRAND,
@@ -113,6 +113,35 @@ export const getAttribute1 = () => {
         payload: request,
     }
 };
+
+//Clears the redux store from the last added new brand
+export const clearAttribute1 = () => {
+    return {
+        type: T.CLEAR_ATTRIBUTE1,
+        payload: '',
+    };
+};
+
+export const addAttribute1 = (dataToSubmit, existingAttribute1) => {
+    const request = axios.post(PRODUCT_SERVER + '/attribute1', dataToSubmit)
+        .then(res => {
+            let attribute1 = [
+                ...existingAttribute1,
+                res.data.attribute1,
+            ];
+            return {
+                success: res.data.success,
+                attribute1
+            }
+        });
+
+    //didn't catch error from the server in case request was unsuccessful
+    return {
+        type: T.ADD_ATTRIBUTE1,
+        payload: request
+    };
+};
+
 
 export const getAttribute2 = () => {
     const request = axios.get(PRODUCT_SERVER + '/attribute2')
