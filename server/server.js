@@ -272,9 +272,51 @@ app.post('/api/users/upload_image', auth, admin, formidable(), (req, res) => {
 //remove an image from Cloudinary at the add a new product section of Admin dashboard
 app.get('/api/users/remove_image', auth, admin, (req, res) => {
     let image_id = req.query.public_id;
-    cloudinary.uploader.destroy(image_id, (err, result)=>{
-        if(err)return res.json({success: false, err});
+    cloudinary.uploader.destroy(image_id, (err, result) => {
+        if (err) return res.json({success: false, err});
         res.status(200).send('ok');
+    })
+});
+
+//add item to the cart
+app.post('/api/users/addToCart', auth, (req, res) => {
+    User.findOne({_id: req.user._id}, (err, doc) => {
+        let duplicate = false;
+        doc.cart.forEach((item) => {
+            if (item.id == req.query.productId) {
+                duplicate = true;
+            }
+        });
+        if (duplicate) {
+            //enter id and modify quantity
+            User.findOneAndUpdate(
+                {_id: req.user._id, "cart.id": mongoose.Types.ObjectId(req.query.productId)},
+                {$inc: {"cart.$.quantity": 1}},
+                {new: true},
+                ()=>{
+                  if(err) return res.json({success: false, err});
+                  res.status(200).json(doc.cart)
+                }
+                )
+        } else {
+            //push new item to the array
+            User.findOneAndUpdate(
+                {_id: req.user._id},
+                {
+                    $push: {
+                        cart: {
+                            id: mongoose.Types.ObjectId(req.query.productId),
+                            quantity: 1,
+                            date: Date.now()
+                        }
+                    }
+                },
+                {new: true},
+                (err, doc) => {
+                    if (err) return res.json({success: false, err});
+                    res.status(200).json(doc.cart)
+                })
+        }
     })
 });
 

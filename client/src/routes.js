@@ -25,7 +25,7 @@ const Routes = () =>{
                 <Route exact path="/admin/add_product" component={Auth(AddProduct, true)}/>
                 <Route exact path="/admin/manage_categories" component={Auth(ManageCategories, true)}/>
 
-                <Route path="/register_login" component={Auth(RegisterLogin, false)}/>
+                <Route path="/user/register_login" component={Auth(RegisterLogin, false)}/>
                 <Route exact path="/register" component={Auth(Register, false)} />
                 <Route exact path="/shop" component={Auth(Shop, null)}/>
                 <Route exact path="/" component={Auth(Home, null)}/>

@@ -18,6 +18,14 @@ switch (action.type) {
             userData: action.payload};
     case T.LOGOUT_USER:
         return state;
+    case T.ADD_TO_CART_USER:
+        return {
+            ...state,
+            userData: {
+                ...state.userData,
+                cart: action.payload
+            }
+        };
     default:
         return state;
 }

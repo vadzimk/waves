@@ -31,9 +31,21 @@ export const authenticateUser = () => {
 };
 
 export const logOutUser = () => {
-    const request = axios.get(USER_SERVER +'/logout').then(response=>response.data);
+    const request = axios.get(USER_SERVER + '/logout').then(response => response.data);
     return {
         type: T.LOGOUT_USER,
+        payload: request,
+    };
+};
+
+
+//takes parameter id of a product
+export const addToCart = (_id) => {
+
+    const request = axios.post(USER_SERVER + '/addToCart?productId=' + _id)
+        .then(res=>res.data);
+    return {
+        type:T.ADD_TO_CART_USER,
         payload: request,
     };
 };

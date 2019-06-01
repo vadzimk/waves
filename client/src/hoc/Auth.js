@@ -34,7 +34,7 @@ export default (ComposedClass, reload, adminRoute = null) => {
 
 
                             //if the user is authenticated go to the dashboard
-                            if (!reload) {
+                            if (reload===false) {
                                 this.props.history.push('/user/dashboard');
                             }
                         }
