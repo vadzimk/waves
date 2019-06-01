@@ -1,7 +1,8 @@
 import axios from 'axios';
 import {T} from "./types";
 
-import {USER_SERVER} from "../components/utils/misc";
+import {USER_SERVER, PRODUCT_SERVER} from "../components/utils/misc";
+
 
 export const registerUser = (dataToSubmit) => {
     const request = axios.post(USER_SERVER + '/register', dataToSubmit)
@@ -48,4 +49,25 @@ export const addToCart = (_id) => {
         type:T.ADD_TO_CART_USER,
         payload: request,
     };
+};
+
+//fetches items to the UserCart component
+//parameter cartItems is an array of cart items
+//parameter userCart contains product ids and quantities in the cart
+export const getCartItems=(cartItems, userCart)=>{
+    const request = axios.get(PRODUCT_SERVER + '/articles_by_id?id=' + cartItems + '&type=array')
+        .then(response=>{
+            userCart.forEach(item=>{
+                response.data.forEach((key,index)=>{
+                    if(item.id===key._id){
+                        response.data[index].quantity = item.quantity;
+                    }
+                })
+            });
+            return response.data;
+        });
+    return{
+        type: T.GET_CART_ITEMS_USER,
+        payload: request
+    }
 };

@@ -26,6 +26,11 @@ switch (action.type) {
                 cart: action.payload
             }
         };
+    case T.GET_CART_ITEMS_USER:
+        return {
+            ...state,
+            cartDetail: action.payload,
+        };
     default:
         return state;
 }
