@@ -28,13 +28,38 @@ class UserCart extends React.Component {
                     cartItems.push(item.id)
                 });
                 this.props.dispatch(getCartItems(cartItems, user.userData.cart))
+                    .then(()=>{
+                        if(this.props.user.cartDetail.length){
+                            this.calculateTotal(this.props.user.cartDetail);
+                        }
+                    })
             }
         }
     }
 
+    calculateTotal=(cartDetail)=>{
+        let total =0;
+        cartDetail.forEach(item=>{
+            total +=parseInt(item.price, 10)*item.quantity;
+        });
+
+        this.setState({
+            total: total,
+            showTotal: true
+        })
+    };
+
+    showNoItemsMessage=()=>(
+        <div className="cart_no_items">
+            No items in the cart yet
+        </div>
+    );
+
     removeFromCart=()=>{
         //removes item from cart
     };
+
+
 
     render() {
         return (
@@ -47,8 +72,28 @@ class UserCart extends React.Component {
                             type="cart"
                             removeItem={(id)=>this.removeFromCart(id)}
                         />
+                        {this.state.showTotal ?
+                            <div className="user_cart_sum">
+                                <div>
+                                    Total amount: ${this.state.total}
+                                </div>
+                            </div>
 
+                            : this.state.showSuccess ?
+                                <div className="cart_success">
+                                    <div>
+                                        Order has been placed
+                                    </div>
+                                </div>
+                            :this.showNoItemsMessage()
+                        }
                     </div>
+                    {this.state.showTotal ?
+                        <div className="paypal_button_container">
+                            Paypal
+                        </div>
+                        :null
+                    }
                 </div>
             </UserLayout>
 
