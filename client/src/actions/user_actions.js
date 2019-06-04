@@ -71,3 +71,23 @@ export const getCartItems=(cartItems, userCart)=>{
         payload: request
     }
 };
+
+
+//takes the id of item to delete as a parameter
+export const removeCartItem =(id)=>{
+    const request = axios.get(USER_SERVER + '/removeFromCart?_id=' + id)
+        .then(response=>{
+            response.data.cart.forEach(item=>{
+                response.data.cartDetail.forEach((key, iteration)=>{
+                    if(item.id===key._id){
+                        response.data.cartDetail[iteration].quantity = item.quantity;
+                    }
+                })
+            });
+            return response.data;
+        });
+    return {
+        type: T.REMOVE_CART_ITEM_USER,
+        payload:request
+    }
+};

@@ -31,6 +31,15 @@ switch (action.type) {
             ...state,
             cartDetail: action.payload,
         };
+    case T.REMOVE_CART_ITEM_USER:
+        return {
+            ...state,
+            cartDetail: action.payload.cartDetail,
+            userData: {
+                ...state.userData,
+                cart: action.payload.cart
+            }
+        };
     default:
         return state;
 }

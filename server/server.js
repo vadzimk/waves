@@ -293,11 +293,11 @@ app.post('/api/users/addToCart', auth, (req, res) => {
                 {_id: req.user._id, "cart.id": mongoose.Types.ObjectId(req.query.productId)},
                 {$inc: {"cart.$.quantity": 1}},
                 {new: true},
-                ()=>{
-                  if(err) return res.json({success: false, err});
-                  res.status(200).json(doc.cart)
+                () => {
+                    if (err) return res.json({success: false, err});
+                    res.status(200).json(doc.cart)
                 }
-                )
+            )
         } else {
             //push new item to the array
             User.findOneAndUpdate(
@@ -318,6 +318,37 @@ app.post('/api/users/addToCart', auth, (req, res) => {
                 })
         }
     })
+});
+
+
+//remove item from the cart / contains ?_id=
+app.get('/api/users/removeFromCart', auth, (req, res) => {
+
+    User.findOneAndUpdate(
+        {_id: req.user._id},
+        {"$pull": {
+                "cart": {"id": mongoose.Types.ObjectId(req.query._id)}
+            }
+        },
+        {new: true},
+        (err, doc)=>{
+            let cart = doc.cart;
+            let array = cart.map(item=>{
+                return mongoose.Types.ObjectId(item.id)
+            });
+            Product
+                .find({'_id':{$in: array}})
+                .populate('brand')
+                .populate('attribute1')
+                .populate('attribute2')
+                .exec((err, cartDetail)=>{
+                    return res.status(200).json({
+                        cartDetail,
+                        cart
+                    })
+                })
+        }
+    )
 });
 
 const port = process.env.PORT || 3002;
