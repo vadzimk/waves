@@ -12,13 +12,13 @@ const HomeSlider = (props) => {
             linkTitle: 'Shop now',
             linkTo: '/shop?categ=glasses',
         },
-        {
-            img: '/images/featured/placeholder-images-watches.png',
-            lineOne: 'Watches',
-            lineTwo: 'Custom shop',
-            linkTitle: 'Shop now',
-            linkTo: '/shop?categ=watches',
-        },
+        // {
+        //     img: '/images/featured/placeholder-images-watches.png',
+        //     lineOne: 'Watches',
+        //     lineTwo: 'Custom shop',
+        //     linkTitle: 'Shop now',
+        //     linkTo: '/shop?categ=watches',
+        // },
     ];
 
     const settings = {
@@ -58,9 +58,9 @@ const HomeSlider = (props) => {
 
     return (
         <div className="featured_container">
-            <Slider {...settings}>
+            {/*<Slider {...settings}>*/}
                 {generateSlides()}
-            </Slider>
+            {/*</Slider>*/}
 
         </div>
     );
