@@ -11,8 +11,8 @@
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "now":{
-    "dotenv":"variables.env.now"
+  "now": {
+    "dotenv": "variables.env.now"
   },
   "author": "",
   "license": "ISC",
