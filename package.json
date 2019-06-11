@@ -12,7 +12,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "now":{
-    "dotenv":"variables.env.now",
+    "dotenv":"variables.env.now"
   },
   "author": "",
   "license": "ISC",
