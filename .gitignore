@@ -3,3 +3,5 @@ build/
 client/node_modules/
 .idea/
 .env
+variables.env.now
+.nowignore
